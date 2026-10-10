@@ -1,0 +1,19 @@
+{% extends 'academy/base.html' %}
+{% block content %}
+<h1>Welcome to CyberAI Academy</h1>
+<p>An integrated platform to master cutting-edge Artificial Intelligence and Cybersecurity technologies using the powerful Django framework.</p>
+<hr>
+<h3>Featured Courses:</h3>
+<ul>
+    {% for course in courses %}
+        <li>
+            <strong>{{ course.title }}</strong> - Instructor: {{ course.instructor }} 
+            <a href="{% url 'course_detail' course.id %}">View Details</a>
+        </li>
+    {% empty %}
+        <p>No courses available at the moment.</p>
+    {% endfor %}
+</ul>
+<br>
+<a href="{% url 'courses' %}" class="btn">Browse All Courses</a>
+{% endblock %}

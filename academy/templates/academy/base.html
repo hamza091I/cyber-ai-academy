@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>CyberAI Academy</title>
+    <link rel="stylesheet" href="{% static 'academy/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div><h2>CyberAI Academy</h2></div>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'courses' %}">Courses</a>
+            <a href="{% url 'enroll' %}">Enroll</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="/admin/" target="_blank">Admin Panel</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>All Rights Reserved &copy; 2026 - CyberAI Academy Django Project</p>
+    </footer>
+</body>
+</html>

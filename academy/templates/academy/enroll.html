@@ -1,0 +1,9 @@
+{% extends 'academy/base.html' %}
+{% block content %}
+<h2>Course Enrollment</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Confirm Enrollment</button>
+</form>
+{% endblock %}

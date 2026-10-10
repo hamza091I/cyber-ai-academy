@@ -1,0 +1,12 @@
+{% extends 'academy/base.html' %}
+{% block content %}
+<h2>{{ course.title }}</h2>
+<p><strong>Instructor:</strong> {{ course.instructor }}</p>
+<p><strong>Price:</strong> ${{ course.price }}</p>
+<hr>
+<p>{{ course.description }}</p>
+<br>
+<a href="{% url 'enroll' %}" class="btn">Enroll in this Course</a>
+<br><br>
+<a href="{% url 'courses' %}">&larr; Back to Courses</a>
+{% endblock %}
